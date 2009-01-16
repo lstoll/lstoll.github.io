@@ -1,0 +1,30 @@
+---
+layout: post
+title: Stand-alone ActiveRecord Migrations
+---
+
+h1. {{ page.title }}
+
+p(meta). 4/7/2008 - Sydney
+
+<strong>Update:</strong> "Todd Huss":http://gabrito.com/post/standalone-migrations-using-rails-migrations-in-non-rails-projects has created a github project based on this - probably worth a look. You can find it "here":http://github.com/thuss/standalone-migrations
+
+Currently working on a merb project using datamapper - nice framework, but the auto-migrate feature is fairly limited - So I decided to hook up ActiveRecord’s migrations into the app. This code could be equally as easily adapted in to anything else.
+
+First, I created a folder for the migrations to live in:
+
+<pre class="terminal"><code>mkdir -p db/ar_migrations</code></pre>
+
+I then appended a few tasks ripped out of Rails and slightly tweaked to the Rakefile:
+
+<script src="http://gist.github.com/47783.js"></script>
+
+These will read from database.yml in config/ , so make sure you’ve got datamapper set up.
+
+Lastly, Let’s create an example migration to create the datamapper sessions table in db/ar_migrations/001_create_dm_session_table.rb:
+
+<script src="http://gist.github.com/47785.js"></script>
+
+Once this is done, you can run rake db:migrate , and the DB will get the sessions table added. The db:schema:load task is also there, so you should use this when you first deploy your app to a new server. The naming is also consistent with rails, so capistrano should interact with it out of the box, with the exception that the environment to load/migrate needs to be called MERB_ENV instead of RAILS_ENV
+
+When creating additional migrations you will need to follow the ‘proper’ naming scheme: the filename should start with an incrementing three digit number, and the rest should be a ‘flattened’ version of the class name. (i.e migration class AddPostTable becomes add_post_table).
