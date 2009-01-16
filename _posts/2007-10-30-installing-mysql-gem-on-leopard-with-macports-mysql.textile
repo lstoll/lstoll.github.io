@@ -1,0 +1,23 @@
+---
+layout: post
+title: Installing MySQL gem on Leopard with MacPorts MySQL
+---
+
+h1. {{ page.title }}
+
+p(meta). 30/10/2007 - Sydney, NSW, AU.
+
+The MySQL Gem won’t install directly on a Leopard machine using a Macports install of mysql (or any other MySQL install method I can think of) because by default gem will try built a universal gem, however the MySQL install will only have libraries for your current platform. So we need to force the architecture the gem is built for.
+
+To install on a Intel Machine:
+
+<pre class="terminal"><code>sudo bash -c "ARCHFLAGS='-arch i386' gem install mysql -- --with-mysql-config=/opt/local/bin/mysql_config5"</code></pre>
+
+To install on a PowerPC Machine:
+
+<pre class="terminal"><code>sudo bash -c "ARCHFLAGS='-arch i386' gem install mysql -- --with-mysql-config=/opt/local/bin/mysql_config5"</code></pre>
+  
+Make sure you select the newest ruby (not mswin32) version.
+If you are not using a Macports MySQL Install, find where mysql_config lives and update the above command.
+
+More info on the bundled Ruby under Leopard can be found here: "http://trac.macosforge.org/projects/ruby/wiki/WhatsNewInLeopard":http://trac.macosforge.org/projects/ruby/wiki/WhatsNewInLeopard

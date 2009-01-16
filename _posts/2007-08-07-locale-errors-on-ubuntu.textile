@@ -1,0 +1,34 @@
+---
+layout: post
+title: Locale Errors on Ubuntu
+---
+
+h1. {{ page.title }}
+
+p(meta). 7/8/2007 - Sydney, NSW, AU.
+
+I set up a new Ubuntu XEN VM, and installed a few packages.. then started getting errors like this all over the place:
+
+<pre><code>perl: warning: Setting locale failed.
+
+perl: warning: Please check that your locale settings:
+
+LANGUAGE = (unset),
+
+LC_ALL = (unset),
+
+LANG = “en_AU.UTF-8″
+
+are supported and installed on your system.
+
+perl: warning: Falling back to the standard locale (”C”).
+
+locale: Cannot set LC_CTYPE to default locale: No such file or directory
+
+locale: Cannot set LC_MESSAGES to default locale: No such file or directory
+
+locale: Cannot set LC_ALL to default locale: No such file or directory</pre></code>
+
+
+
+Seems that at some point all the entries get screwed up for setting locales. I ran sudo apt-get install language-pack-en-base , and then everything was fineso this ease is brought to all ruby frameworks.

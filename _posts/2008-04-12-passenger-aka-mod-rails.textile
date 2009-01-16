@@ -1,0 +1,48 @@
+---
+layout: post
+title: Passenger (A.K.A. mod_rails_)
+---
+
+h1. {{ page.title }}
+
+p(meta). 12/04/2008 - Sydney, NSW, AU.
+
+Passenger is now available for download - http://www.modrails.com . If you haven’t heard of it, is basically an apache module for running rails apps - nice and easily. I’ve just moved it over to this site, and it was incredibly easy. The install on my ubuntu server went like this:
+
+
+<pre class="terminal"><code>sudo apt-get install apache2-prefork-dev libapr1-dev
+sudo gem install passenger
+passenger-install-apache2-module</code></pre>
+
+I then added the apache config lines to the end of the apache config, and set my site up like:
+
+<pre><code><VirtualHost *:80>
+ServerName lstoll.net
+DocumentRoot /home/xxx/sites/lstoll.net/current/public
+ServerAdmin xxx@xxx.net
+ErrorLog /home/xxx/logs/lstoll.net_error.log
+CustomLog /home/xxx/logs/lstoll.net_access.log combined
+</VirtualHost></pre></code>
+Then, when apache started up it automatically started the rails app, and it just worked. It’s simple to use with capistrano, here’s my deploy tasks from deploy.rb:
+
+<pre><code>namespace :deploy do
+  desc "Custom restart task for passenger"
+  task :restart, :roles => :app, :except => { :no_release => true } do
+    run "touch #{deploy_to}/current/tmp/restart.txt"
+  end
+ 
+  desc "Custom start task for passenger"
+  task :start, :roles => :app do
+    # Don't need to do anything, it's automatic
+  end
+ 
+  desc "Custom stop task for passenger"
+  task :stop, :roles => :app do
+    # currently no way I know of to 'stop' the app
+  end
+ 
+end</pre></code>
+
+Once that is done, capistrano can flag to passenger to restart the app.
+
+A bit of casual benchmarking shows it’s fast too. I’m very happy this is out there, it makes running rails apps as easy as PHP - saving all the messing around with mongrel/thin/monit. It also works with rails caching, so so more messing around with rewrite rules to get cached files to be read right off disk. This should hopefully make rails better on shared hosts, and lower the barrier of entry. Only downside is that this is currently rails only - so for merb/camping/anything else the old way is still needed. I’m hoping that soon passenger will support rack, or mod_rack/mod_rubinius will come out, so this ease is brought to all ruby frameworks.

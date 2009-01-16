@@ -1,0 +1,27 @@
+---
+layout: post
+title: Shell Meme
+---
+
+h1. {{ page.title }}
+
+p(meta). 18/04/2008 - Sydney, NSW, AU.
+
+I can't remember where I saw this first...
+
+I ran
+
+<pre class="terminal"><code>history|awk '{a[$2]++} END{for(i in a){printf "%5d\t%s\n ",a[i],i}}'|sort -rn|head</code></pre>
+and got this:
+
+<pre><code>100	cd
+62	ls
+60	git
+28	ssh
+26	hg
+19	mate
+17	psql
+15	sudo
+15	mv
+14	rake</pre></code>
+Looks like I’ve spent too much time looking for things, and not enough time working on them.
