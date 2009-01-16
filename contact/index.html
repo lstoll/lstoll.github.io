@@ -4,6 +4,7 @@ title: Lincoln Stoll
 ---
 
 <div id="home">
+  <div id="notice"></div>
   <h1>Contact</h1>
   <p><strong>email:</strong> <a href="mailto:lstoll@lstoll.net">lstoll@lstoll.net</a><br />
   <strong>msn/google talk/jabber:</strong> lstoll@lstoll.net<br />
@@ -13,3 +14,10 @@ title: Lincoln Stoll
   <p>email is your best route for initial contact, failing that IM. I probably won&#8217;t answer your call if it&#8217;s from a private or unknown number.</p>
   
 </div>
+
+<script>
+$(document).ready(function() {
+  if (document.referrer.indexOf("http://static.lstoll.net") != -1)
+    $('#notice').append("<p><strong>Here from my twitter?:</strong> if you're curious as to why I'm not there anymore, you may want to look at <a href=\"/2009/01/16/re-jigging-my-online-presence.html\">this post.</a>");
+});
+</script>
