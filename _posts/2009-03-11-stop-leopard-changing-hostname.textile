@@ -1,0 +1,18 @@
+---
+layout: post
+title: Stop Leopard changing your hostname
+---
+
+h1. {{ page.title }}
+
+p(meta). 11/03/2009 - Islington, London, UK.
+
+One annoying thing in Leopard is that by default it is happy to take on the DNS (or other name resolution) provided hostname, which messes up the terminal prompt, and makes a whole bunch of applications assume that is your hostname, which is annoying when it's something like "77-101-168-198". This hasn't been a problem for me in the past as I've usually been on a network behind NAT, but here I'm on a direct cable connection, and it is all over the place. To fix this, run the following (replacing 'linc' with your desired hostname)
+
+<pre class="brush: bash">
+  sudo hostname linc.local
+  sudo scutil --set HostName linc.local
+  sudo scutil --set LocalHostName linc
+</pre>
+
+Once this is done, the name should stick permanently.
