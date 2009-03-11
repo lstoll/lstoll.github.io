@@ -8,8 +8,15 @@
    <meta name="author" content="Lincoln Stoll" />
    <link href="http://feeds.lstoll.net/lstollnet" rel="alternate" title="Lincoln Stoll" type="application/atom+xml" />
 
-   <!-- syntax highlighting CSS -->
-   <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+   <!-- new syntax highlighting -->
+   <link type="text/css" rel="stylesheet" href="/css/shCore.css" />
+   <link type="text/css" rel="stylesheet" href="/css/shThemeDefault.css" />
+   <script type="text/javascript" src="/scripts/shCore.js"></script>
+   <script type="text/javascript" src="/scripts/shBrushJScript.js"></script>
+   <script type="text/javascript" src="/scripts/shBrushBash.js"></script>
+   <script type="text/javascript" src="/scripts/shBrushRuby.js"></script>
+   <script type="text/javascript" src="/scripts/shBrushXml.js"></script>
+   <script type="text/javascript" src="/scripts/shBrushJava.js"></script>
 
    <!-- Homepage CSS -->
    <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
@@ -63,6 +70,11 @@
   </div>
 </div>
 
+<!-- Syntax Highlight! -->
+<script type="text/javascript">
+SyntaxHighlighter.all();
+</script>
+<!-- Analytics -->
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
