@@ -1,0 +1,4 @@
+syntax: glob
+_drafts/*
+_site/*
+.DS_Store
