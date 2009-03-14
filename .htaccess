@@ -38,11 +38,3 @@ RewriteRule 2007/05/10/anti-spam-and-anti-virus-for-domino-the-free-way http://s
 RewriteRule 2007/05/12/vmware-server-console-invalid-username-password-on-opensuse-10-2-x64 http://lstoll.net/2007/05/vmware-server-console-invalid-usernamepassword-on-opensuse-102-x64/ [R=301,L]
 RewriteRule 2007/05/10/domino-anti-spam-and-av-setup-with-assp-part-1-getting-it-going http://lstoll.net/2007/05/domino-anti-spam-and-av-setup-with-assp-part-1-getting-it-going/ [R=301,L]
 RewriteRule 2007/03/07/remotely-installing-domino-7-for-linux-on-opensuse-10-2 http://lstoll.net/2007/03/remotely-installing-domino-7-for-linux-on-opensuse-102/ [R=301,L]
-## TODO - include category and archive and etc.
-RewriteRule archives http://lstoll.net/ [R=301,L]
-RewriteRule domino http://lstoll.net/ [R=301,L]
-RewriteRule linux http://lstoll.net/ [R=301,L]
-RewriteRule hghub http://lstoll.net/2008/07/a-brief-update/ [R=301,L]
-RewriteRule merb http://lstoll.net/ [R=301,L]
-RewriteRule iphone http://lstoll.net/ [R=301,L]
-RewriteRule deployment http://lstoll.net/ [R=301,L]
