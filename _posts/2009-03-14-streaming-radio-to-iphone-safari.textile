@@ -1,0 +1,18 @@
+---
+layout: post
+title: Triple J on your iPhone.
+---
+
+h1. {{ page.title }}
+
+p(meta). 14/03/2009 - Islington, London, UK.
+
+A month or so ago, I set up a little site that let's you stream Triple J to the iPhone. I've since been using it more, so I've decided to finally release the code, and push the site a little more.
+
+Firstly, you can visit the site on your iPhone at <a href="http://r.lstoll.net">r.lstoll.net</a>. Don't try it on desktop Safari - it seems to hang. It currently only has Triple J, however I can add more stations on request - providing they have a MP3 stream available.
+
+I've also pushed the code up to <a href="http://hg.lstoll.net/rlstollnet/">http://hg.lstoll.net/rlstollnet/</a>. It's a pretty basic Sinatra application, pulling the config out of a yaml file. It could probably use some improvement, but it works so I'm happy. It demonstrates a custom body object to stream data back to a user, you can see it in <a href="http://hg.lstoll.net/rlstollnet/src/tip/lib/radio_streamer.rb">lib/radio_streamer.rb</a>. Unfortunately some ruby servers don't support streaming the response, notably thin and passenger < 2.1.1, so if you plan on playing with it I'd recommend using mongrel or the latest passenger.
+
+Another interesting point in the code is that it's a Sinatra app, developed in Netbeans - including running and debugging, something which there isn't too much info out there about. If you're trying to develop Sinatra apps in Netbeans, it's worth a look at the layout.
+
+The code definitely needs some enhancements - currently each user stream opens a new stream to the source, which isn't terribly efficient, plus stream transcoding so WM and AAC sources can be added would be good too.
