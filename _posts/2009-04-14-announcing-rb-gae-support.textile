@@ -1,0 +1,20 @@
+---
+layout: post
+title: Announcing the rb-gae-support gem
+---
+
+h1. {{ page.title }}
+
+p(meta). 14/04/2009 - Salzburg, Austria
+
+Recently Google announced Java support for Google App Engine - which opened the floodgates for me. I've always loved the idea of GAE, but have never been that in to Python. Now however not only can I work in Java, but also other JVM languages, including one of my favorites, Ruby. GAE is not without limitations though, so some things have to be done a little differently especially HTTP access. It also provides some useful services, like User authentication and Memcached. To make this all easier, I've started on a gem called rb-gae-support. At the moment it is very alpha, however it monkey patches enough Net:HTTP to get it working on GAE (tested with a few gems). It also provides easier wrappers for the User and Memcache services, to make it fit in a little better.
+
+It's still in active development, so expect it to become much more stable and have more functionality soon. Patches are always welcome too! I'm also working on a template to make it easier to get started with and develop GAE apps, that will avoid all the restarts in the dev env. Hopefully, I'll wrap this into some kind of generator.
+
+For now, you can install the gem 
+<pre class="brush: bash">
+  sudo gem install rb-gae-support
+</pre>
+, see the RDoc at <a href="http://rb-gae-support.rubyforge.org">http://rb-gae-support.rubyforge.org</a> and grab the code from <a href="http://github.com/lstoll/rb-gae-support">http://github.com/lstoll/rb-gae-support</a>. The template app I'm working on can be found at <a href="http://github.com/lstoll/rack-gae-template">http://github.com/lstoll/rack-gae-template</a>.
+
+So please try it out, and let me know how you go!
