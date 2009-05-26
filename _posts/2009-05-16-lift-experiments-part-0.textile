@@ -5,7 +5,7 @@ title: Experiments with lift and scala, part 0 - setting up
 
 h1. {{ page.title }}
 
-p(meta). 16/04/2009 - Buchs, Switzerland
+p(meta). 16/05/2009 - Buchs, Switzerland
 
 I've decided it's finally time to sit down and do some experimentation with <a href="http://liftweb.net/">lift</a>, a <a href="http://www.scala-lang.org/">scala</a> web framework. I've been using scala for a few small projects, and it's a language I really like so I figured I should take it to the next level, and try out a web app. The app will be a simple URL shortener, with some admin and tracking added later. I'm also planning on eventually running this app on Google App Engine, so that should make things a little more interesting.
 
@@ -42,17 +42,17 @@ h2. Create a test project
 We should be set up to go. Fire up a Terminal, navigate to the folder you want to create the project in, and run the following command:
 
 <pre class="brush: bash">
-  mvn archetype:generate -U \
+  mvn archetype:generate \
+  -DarchetypeRepository=http://scala-tools.org/repo-snapshots \
   -DarchetypeGroupId=net.liftweb \
-  -DarchetypeArtifactId=lift-archetype-basic \
-  -DarchetypeVersion=1.0 \
-  -DremoteRepositories=http://scala-tools.org/repo-releases \
+  -DarchetypeArtifactId=lift-archetype-jpa-blank-single \
+  -DarchetypeVersion=1.1-SNAPSHOT \
   -DgroupId=net.lstoll.u \
   -DartifactId=u.lstoll.net \
-  -Dversion=0.1-SNAPSHOT
+  -Dversion=1.0-SNAPSHOT
 </pre>
 
-This will create an application in the folder u.lstoll.net, with a package of net.lstoll.u . Why these names? Well, that's the site where I'm going to run the application. Feel free to change it to whatever you want. It will take a while to download everything.
+This will create an application in the folder u.lstoll.net, with a package of net.lstoll.u .Why these names? Well, that's the site where I'm going to run the application. We also use the  lift-archetype-jpa-blank-single archetype, which gives us a blank, single module JPA application. Feel free to change it to whatever you want. It will take a while to download everything.
 
 h2. Open the project in netbeans, and test.
 
@@ -72,4 +72,4 @@ Note: The run integration isn't the best at the moment - Netbeans doesn't detect
 
 That's it for part 0. In part 1, we will code the basic application.
 
-You can find the code for this application at http://github.com/lstoll/u.lstoll.net
+You can find the code for this application at <a href="http://github.com/lstoll/u.lstoll.net">http://github.com/lstoll/u.lstoll.net</a>
