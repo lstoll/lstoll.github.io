@@ -1,0 +1,20 @@
+---
+layout: post
+title: Enabling iPhone 3.0 Tethering and MMS on Three UK
+---
+
+h1. {{ page.title }}
+
+p(meta). 14/06/2009 - London, UK
+
+The iPhone 3.0 Software is almost upon us, with some features I've been looking forward to - including tethering and MMS. Unfortunately, the tethering feature has been limited to those carriers that officially carry the iPhone, and wish to allow their users to use it. This is unfortunate for those of us who have paid to unlock our phone, and are using an alternate carrier - as the feature never gets enabled this. There is a way around this however - a .mobileconfig file that sets the APN's up correctly. If you're using 3 UK, browse to this page on your phone, and <a href="http://github.com/lstoll/iphone-carrier-settings/raw/master/3UKTether.mobileconfig">click on this link</a> (Or you can save it, and mail to your phone). This will provision your phone, and enable tethering. Works great with the £5 a month unlimited internet add-on. For those on other carriers, take a look at the 3UKTether.mobileconfig file here: <a href="http://github.com/lstoll/iphone-carrier-settings/tree/master">http://github.com/lstoll/iphone-carrier-settings/tree/master</a>, it's pretty easy to set it up yourself. Then, just email the file to your phone, and open it. Enabling MMS is easier - On your phone, go to Settings -> General -> Network -> Cellular Data, and enter the following details in the dialog:
+
+* MMS APN: three.co.uk
+* MMSC: mms.um.three.co.uk:10021/mmsc
+* MMS Proxy: mms.three.co.uk:8799
+
+After I entered this I had to restart my phone - once it came back, MMS was working. Check by making sure there is a camera icon in the new message box, like this:
+
+<img src="http://static.lstoll.net/skitch/iphone-mms-icon.jpg"/>
+
+and try sending a message.
