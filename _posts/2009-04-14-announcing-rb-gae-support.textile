@@ -8,7 +8,7 @@ h1. {{ page.title }}
 p(meta). 14/04/2009 - Salzburg, Austria
 
 <strong>Update:</strong>
-There is now an issue tracker at <a href="http://github.com/lstoll/rb-gae-support/issues">http://github.com/lstoll/rb-gae-support/issues</a>
+Some googlers have gone out and done a much more complete verion of this, so this project is now defunct. see <a href="http://code.google.com/p/appengine-jruby/">http://code.google.com/p/appengine-jruby/</a>
 
 Recently Google announced Java support for Google App Engine - which opened the floodgates for me. I've always loved the idea of GAE, but have never been that in to Python. Now however not only can I work in Java, but also other JVM languages, including one of my favorites, Ruby. GAE is not without limitations though, so some things have to be done a little differently especially HTTP access. It also provides some useful services, like User authentication and Memcached. To make this all easier, I've started on a gem called rb-gae-support. At the moment it is very alpha, however it monkey patches enough Net:HTTP to get it working on GAE (tested with a few gems). It also provides easier wrappers for the User and Memcache services, to make it fit in a little better.
 
