@@ -7,7 +7,10 @@ h1. {{ page.title }}
 
 p(meta). 13/03/2009 - Islington, London, UK.
 
+<strong>Update 2 (24/10/2009):</strong>
+I've got a 64 bit version of the package available now as well. Please note it has had very little testing - please try it out, and report any bugs you find. You can download it here: <a href="http://static.lstoll.net/dss/DarwinStreamingSrvr6.0.3-L2-Linux-x64.deb.gz">http://static.lstoll.net/dss/DarwinStreamingSrvr6.0.3-L2-Linux-x64.deb.gz</a>
+
 <strong>Update:</strong>
-There is now an issue tracker at <a href="httphttp://hg.lstoll.net/dss/issues">http://hg.lstoll.net/dss/issues</a>
+There is now an issue tracker at <a href="http://hg.lstoll.net/dss/issues">http://hg.lstoll.net/dss/issues</a>
 
 I've made available a pre-built .dpkg for running the latest version of Darwin Streaming Server on Ubuntu. This has been tested on 8.04, will probably work on other versions. Currently only supports 32bit versions - if you only have servers running 64bit Ubuntu, you can use xen to run a 32bit instance under this. It is mostly the Apple released code, with a few linux compatibility patches from the mailing list and some changes by myself to make it work behind Cisco load balancers, and to be properly packed for Ubuntu (including startup items). It's been running in production for a while, so should be fairly stable. You can download the binary package (you will need to gunzip it first) from <a href="http://static.lstoll.net/dss/DarwinStreamingSrvr6.0.3-Linux.deb.gz">http://static.lstoll.net/dss/DarwinStreamingSrvr6.0.3-Linux.deb</a>, access the source at <a href="http://hg.lstoll.net/dss/">http://hg.lstoll.net/dss/</a>, and report any issues relating to this build to me <a href="mailto:lstoll@lstoll.net">lstoll@lstoll.net</a>. This isn't a replacement for the Apple bug tracker - things should also be reported there as well.
