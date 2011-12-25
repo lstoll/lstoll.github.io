@@ -17,11 +17,11 @@ LANGUAGE = (unset),
 
 LC_ALL = (unset),
 
-LANG = “en_AU.UTF-8″
+LANG = âen_AU.UTF-8â³
 
 are supported and installed on your system.
 
-perl: warning: Falling back to the standard locale (”C”).
+perl: warning: Falling back to the standard locale (âCâ).
 
 locale: Cannot set LC_CTYPE to default locale: No such file or directory
 

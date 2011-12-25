@@ -24,4 +24,4 @@ and got this:
 15	sudo
 15	mv
 14	rake</pre></code>
-Looks like I’ve spent too much time looking for things, and not enough time working on them.
+Looks like Iâve spent too much time looking for things, and not enough time working on them.
