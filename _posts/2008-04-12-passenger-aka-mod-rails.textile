@@ -7,7 +7,7 @@ h1. {{ page.title }}
 
 p(meta). 12/04/2008 - Sydney, NSW, AU.
 
-Passenger is now available for download - http://www.modrails.com . If you havenât heard of it, is basically an apache module for running rails apps - nice and easily. Iâve just moved it over to this site, and it was incredibly easy. The install on my ubuntu server went like this:
+Passenger is now available for download - http://www.modrails.com . If you haven't heard of it, is basically an apache module for running rails apps - nice and easily. I've just moved it over to this site, and it was incredibly easy. The install on my ubuntu server went like this:
 
 
 <pre class="terminal"><code>sudo apt-get install apache2-prefork-dev libapr1-dev
@@ -23,7 +23,7 @@ ServerAdmin xxx@xxx.net
 ErrorLog /home/xxx/logs/lstoll.net_error.log
 CustomLog /home/xxx/logs/lstoll.net_access.log combined
 </VirtualHost></pre></code>
-Then, when apache started up it automatically started the rails app, and it just worked. Itâs simple to use with capistrano, hereâs my deploy tasks from deploy.rb:
+Then, when apache started up it automatically started the rails app, and it just worked. It's simple to use with capistrano, here's my deploy tasks from deploy.rb:
 
 <pre><code>namespace :deploy do
   desc "Custom restart task for passenger"
@@ -45,4 +45,4 @@ end</pre></code>
 
 Once that is done, capistrano can flag to passenger to restart the app.
 
-A bit of casual benchmarking shows itâs fast too. Iâm very happy this is out there, it makes running rails apps as easy as PHP - saving all the messing around with mongrel/thin/monit. It also works with rails caching, so so more messing around with rewrite rules to get cached files to be read right off disk. This should hopefully make rails better on shared hosts, and lower the barrier of entry. Only downside is that this is currently rails only - so for merb/camping/anything else the old way is still needed. Iâm hoping that soon passenger will support rack, or mod_rack/mod_rubinius will come out, so this ease is brought to all ruby frameworks.
+A bit of casual benchmarking shows it's fast too. I'm very happy this is out there, it makes running rails apps as easy as PHP - saving all the messing around with mongrel/thin/monit. It also works with rails caching, so so more messing around with rewrite rules to get cached files to be read right off disk. This should hopefully make rails better on shared hosts, and lower the barrier of entry. Only downside is that this is currently rails only - so for merb/camping/anything else the old way is still needed. I'm hoping that soon passenger will support rack, or mod_rack/mod_rubinius will come out, so this ease is brought to all ruby frameworks.

@@ -7,7 +7,7 @@ h1. {{ page.title }}
 
 p(meta). 30/10/2007 - Sydney, NSW, AU.
 
-The MySQL Gem wonât install directly on a Leopard machine using a Macports install of mysql (or any other MySQL install method I can think of) because by default gem will try built a universal gem, however the MySQL install will only have libraries for your current platform. So we need to force the architecture the gem is built for.
+The MySQL Gem won't install directly on a Leopard machine using a Macports install of mysql (or any other MySQL install method I can think of) because by default gem will try built a universal gem, however the MySQL install will only have libraries for your current platform. So we need to force the architecture the gem is built for.
 
 To install on a Intel Machine:
 
